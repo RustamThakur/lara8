@@ -18,4 +18,5 @@ jobs:
 
       - name: Deploy code
         run: |
-          echo 'ww_*ES7Tf?$7NKW' | sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no root@157.230.221.252
+          echo 'ww_*ES7Tf?$7NKW' | sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no -v root@157.230.221.252
+
