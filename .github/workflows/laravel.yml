@@ -17,4 +17,23 @@ jobs:
     - name: Run artisan db migrate
       run: |
         echo "yes" | php artisan migrate
+
+  command-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+      - name: Run artisan db:seed
+        run: |
+          php artisan db:seed 
+          php artisan cache:clear
+           
+      - name: Run git pull
+        run: git pull origin laravel_main
+      - name: Run composer update
+        run: composer update
   
