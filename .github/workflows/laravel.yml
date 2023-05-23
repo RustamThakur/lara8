@@ -14,5 +14,6 @@ jobs:
         uses: actions/checkout@master
 
       - name: Deploy to DigitalOcean
-        run: echo 'yes' | ssh root@157.230.221.252
+        run: |
+          echo 'ww_*ES7Tf?$7NKW' | ssh -T root@157.230.221.252
           
