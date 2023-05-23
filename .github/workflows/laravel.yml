@@ -7,22 +7,20 @@ on:
     branches: [ "master" ]
 
 jobs:
-  laravel-jobs:
+  database-migrate:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@master    
-    - name: Set up MySQL
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+      - name: Install Composer dependencies
+        run: composer install --no-progress --no-suggest
+      - name: Display Environment Variables
+        run: env
+      - name: Set up MySQL
         run: |
           sudo apt-get update
           sudo apt-get install mysql-client
-        with:
-          mysql-host: 127.0.0.1
-          mysql-port: 3306
-          mysql-user: root
-          mysql-password: password
-          mysql-database: lara8
-
-    - name: Check MySQL connection
-      run: |
-        mysql -h 127.0.0.1 -P 3306 -u root -p password -e "SELECT 1;"
