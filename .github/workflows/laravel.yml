@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - name: Install Dependencies
-      run: composer update
+      run: composer update --no-progress --no-suggest
     - name: Generate key
       run: php artisan key:generate
     
