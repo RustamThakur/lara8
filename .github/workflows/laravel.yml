@@ -1,32 +1,22 @@
-name: Laravel
+name: Deploy to DigitalOcean
 
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+    branches:
+      - master
 
 jobs:
-  database-migrate:
+  deploy:
     runs-on: ubuntu-latest
-    services:
-      mysql:
-        image: mysql:latest
-        env:
-          MYSQL_ROOT_PASSWORD: password
-          MYSQL_DATABASE: lara8
-        ports:
-          - 3306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
-      - name: Set up PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.0'
+      - name: Checkout code
+        uses: actions/checkout@master
 
-      - name: Install MySQL Client
-        run: sudo apt-get install mysql-client
+      - name: Install sshpass
+        run: sudo apt-get install -y sshpass
 
-      - name: Check MySQL connection
-        run:  mysql -u root
+      - name: Deploy to DigitalOcean
+        run: |
+          # Replace with your specific deployment command
+          sshpass -p ww_*ES7Tf?$7N12 ssh root@157.230.221.252 "cd /var/www/html/sanad"
