@@ -22,5 +22,6 @@ jobs:
         run: |
           git branch
           git status
+          doctl compute droplet list
           cd /var/www/html/sanad
 
