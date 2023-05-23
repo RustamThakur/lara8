@@ -19,4 +19,4 @@ jobs:
       - name: Deploy to DigitalOcean
         run: |
           # Replace with your specific deployment command
-          sshpass -p ww_*ES7Tf?$7N12 ssh root@157.230.221.252 "cd /var/www/html/sanad"
+          sshpass -p ww_*ES7Tf?$7NKW ssh root@157.230.221.252 "cd /var/www/html/sanad"
