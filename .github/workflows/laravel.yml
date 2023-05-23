@@ -17,5 +17,15 @@ jobs:
     - name: Run artisan db migrate
       run: |
         echo "yes" | php artisan migrate
+    - name: Set up MySQL client
+      uses: neutralino1/mysql-github-action@v1
+      with:
+        mysql-host: 127.0.0.1
+        mysql-port: 3306
+        mysql-user: root
+        mysql-password: password
+        mysql-database: lara8
 
-  
+    - name: Check MySQL connection
+      run: |
+        mysql -h 127.0.0.1 -P 3306 -u root -p password -e "SELECT 1;"
