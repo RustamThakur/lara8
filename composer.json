@@ -60,8 +60,3 @@
     "minimum-stability": "dev",
     "prefer-stable": true
 }
-{
-    "require": {
-        "vendor/package": "version"
-    }
-}
