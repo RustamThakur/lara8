@@ -19,5 +19,4 @@ jobs:
           sudo apt-get update
           sudo apt-get install mysql-client
       - name: Check MySQL connection
-        run: |
-          mysql -h 127.0.0.1 -P 3306 -u root;
+        run: echo "password" | mysql -h 127.0.0.1 -u root -p;
