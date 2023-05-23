@@ -16,12 +16,12 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install mysql-client
-      with:
-        mysql-host: 127.0.0.1
-        mysql-port: 3306
-        mysql-user: root
-        mysql-password: password
-        mysql-database: lara8
+        with:
+          mysql-host: 127.0.0.1
+          mysql-port: 3306
+          mysql-user: root
+          mysql-password: password
+          mysql-database: lara8
 
     - name: Check MySQL connection
       run: |
