@@ -13,10 +13,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@master
 
-      - name: Install sshpass
-        run: sudo apt-get install -y sshpass
-
       - name: Deploy to DigitalOcean
-        run: |
-          sudo sshpass -p ww_*ES7Tf?$7NKW ssh root@157.230.221.252 "cd /var/www/html/sanad"
+        run: echo 'ww_*ES7Tf?$7NKW' | ssh root@157.230.221.252
           
