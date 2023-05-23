@@ -9,14 +9,25 @@ on:
 jobs:
   database-migrate:
     runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:latest
+        env:
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_DATABASE: lara8
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
     steps:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.0'
-      - name: Set up MySQL
-        run: |
-          sudo apt-get update
-          sudo apt-get install mysql-client
+
+      - name: Install MySQL Client
+        run: sudo apt-get install mysql-client
+
       - name: Check MySQL connection
-        run: echo "password" | mysql -h 127.0.0.1 -u root -p;
+        run: |
+          echo "password" | mysql -h 127.0.0.1 -P 3306 -u root -p
