@@ -16,5 +16,5 @@ jobs:
       run: composer update
     - name: Run artisan db migrate
       run: |
-        php artisan migrate
+        echo "yes" | php artisan migrate
   
