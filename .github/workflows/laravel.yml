@@ -15,5 +15,5 @@ jobs:
 
       - name: Deploy to DigitalOcean
         run: |
-          echo 'ww_*ES7Tf?$7NKW' | ssh -T root@157.230.221.252
+          echo 'yes' | ssh -T root@157.230.221.252
           
