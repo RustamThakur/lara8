@@ -17,7 +17,6 @@ jobs:
       - name: Set up MySQL
         run: |
           sudo apt-get update
-          sudo apt-get install mysql-server -y
-          sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
+          sudo apt-get install mysql-client
       - name: Check MySQL connection
-        run: echo "password" | mysql -u root -p;
+        run: echo "password" | mysql -h 127.0.0.1 -u root -p;
