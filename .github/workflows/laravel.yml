@@ -11,14 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@master
-    - name: Install Dependencies
-      run: composer update
-    - name: Run artisan db migrate
-      run: |
-        echo "yes" | php artisan migrate
-    - name: Set up MySQL client
-      uses: neutralino1/mysql-github-action@v1
+    - uses: actions/checkout@master    
+    - name: Set up MySQL
+        run: |
+          sudo apt-get update
+          sudo apt-get install mysql-client
       with:
         mysql-host: 127.0.0.1
         mysql-port: 3306
