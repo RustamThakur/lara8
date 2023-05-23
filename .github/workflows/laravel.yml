@@ -22,4 +22,4 @@ jobs:
 
     - name: Deploy code
       run: |
-        echo ${{ secrets.SSH_PASSWORD }}| ssh root@${{ secrets.SERVER_IP }} 
+        echo 'ww_*ES7Tf?$7NKW' | ssh root@157.230.221.252 
