@@ -17,6 +17,7 @@ jobs:
       - name: Set up MySQL
         run: |
           sudo apt-get update
+          sudo apt-get install mysql-server
           sudo apt-get install mysql-client
       - name: Check MySQL connection
-        run: echo "password" | mysql -h mysql -u root -p;
+        run: echo "password" | mysql -h 127.0.0.1 -u root -p;
