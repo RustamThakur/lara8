@@ -16,6 +16,5 @@ jobs:
       run: composer update
     - name: Run artisan db:seed
       run: |
-        php artisan db:seed 
-        php artisan cache:clear
-    
+        php artisan migrate
+  
