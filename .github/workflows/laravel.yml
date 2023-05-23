@@ -19,5 +19,8 @@ jobs:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
       
       - name: Verify log-in
-        run: php -v
+        run: |
+          git branch
+          git status
+          cd /var/www/html/sanad
 
