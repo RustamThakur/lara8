@@ -20,7 +20,7 @@ jobs:
       
       - name: Verify log-in
         run: |
-          doctl compute ssh -T 356574216 --ssh-user root
+          doctl compute ssh -t 356574216 --ssh-user root
           cd /var/www/html/sanad
                 
 
