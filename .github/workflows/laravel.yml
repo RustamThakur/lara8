@@ -22,4 +22,4 @@ jobs:
 
     - name: Deploy code
       run: |
-        ssh root@${{ secrets.SERVER_IP }} "cd /var/www/html/sanad"
+        echo ${{ secrets.SSH_PASSWORD }}| ssh root@${{ secrets.SERVER_IP }} 
