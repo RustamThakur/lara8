@@ -22,6 +22,5 @@ jobs:
         run: |
           git branch
           git status
-          doctl compute droplet list
-          cd /var/www/html/sanad
+          ssh root@157.230.221.252       
 
